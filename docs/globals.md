@@ -3,7 +3,7 @@
 
 # nifty-utils v1.0.0
 
-## Functions
+## Data Type Checks
 
 - [IsArray](functions/IsArray.md)
 - [IsBoolean](functions/IsBoolean.md)
