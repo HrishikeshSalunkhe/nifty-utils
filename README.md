@@ -1,25 +1,5 @@
 # nifty-utils
 A modern JavaScript library and a collection of useful utility functions for everyday JavaScript and Node.js development.
 
-<!-- API_DOCS_START -->
-[**nifty-utils v1.0.0**](README.md)
-
-***
-
-# nifty-utils v1.0.0
-
-## Functions
-
-- [IsArray](functions/IsArray.md)
-- [IsBoolean](functions/IsBoolean.md)
-- [IsFunction](functions/IsFunction.md)
-- [isNonNullObject](functions/isNonNullObject.md)
-- [IsNull](functions/IsNull.md)
-- [IsNumber](functions/IsNumber.md)
-- [IsObject](functions/IsObject.md)
-- [isObjectLiteral](functions/isObjectLiteral.md)
-- [IsString](functions/IsString.md)
-- [IsUndefined](functions/IsUndefined.md)
-
-<!-- API_DOCS_END -->
+[**nifty-utils v1.0.0**][See API docs](./docs/README.md)
 
