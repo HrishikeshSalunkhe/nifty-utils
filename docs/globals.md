@@ -1,7 +1,3 @@
-# nifty-utils
-A modern JavaScript library and a collection of useful utility functions for everyday JavaScript and Node.js development.
-
-<!-- API_DOCS_START -->
 [**nifty-utils v1.0.0**](README.md)
 
 ***
@@ -20,6 +16,3 @@ A modern JavaScript library and a collection of useful utility functions for eve
 - [isObjectLiteral](functions/isObjectLiteral.md)
 - [IsString](functions/IsString.md)
 - [IsUndefined](functions/IsUndefined.md)
-
-<!-- API_DOCS_END -->
-
