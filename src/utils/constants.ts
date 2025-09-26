@@ -5,5 +5,5 @@ export const DATA_TYPES = {
   OBJECT: 'object',
   FUNCTION: 'function',
   NULL: null,
-  UNDEFINED: undefined
+  UNDEFINED: 'undefined'
 }
