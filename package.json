@@ -15,13 +15,21 @@
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "docs": "typedoc",
+    "docs:update-readme": "ts-node scripts/add-docs.ts"
   },
   "author": "Hrishikesh Salunkhe",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/node": "^24.5.2",
+    "jest": "^30.1.3",
+    "ts-jest": "^29.4.4",
+    "ts-node": "^10.9.2",
     "tsup": "^8.5.0",
+    "typedoc": "^0.28.13",
+    "typedoc-plugin-markdown": "^4.9.0",
     "typescript": "^5.9.2"
   },
   "dependencies": {
