@@ -1,4 +1,3 @@
-[**nifty-utils v1.0.0**](README.md)
 
 ***
 
