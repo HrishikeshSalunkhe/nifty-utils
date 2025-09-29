@@ -1,7 +1,7 @@
 
 ***
 
-# nifty-utils v1.0.0
+# nifty-utils
 
 ## Data Type Checks
 

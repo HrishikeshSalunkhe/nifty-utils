@@ -1,7 +1,12 @@
 {
   "name": "nifty-utils",
   "version": "1.0.0",
-  "description": "A node js utility function package",
+  "description": "A lightweight TypeScript & JavaScript utility library focused on type handling functions.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrishikeshsalunkhe/nifty-utils.git"
+  },
+  "homepage": "https://github.com/hrishikeshsalunkhe/nifty-utils#readme",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/cjs/index.d.ts",
@@ -19,8 +24,16 @@
     "docs": "typedoc",
     "docs:update-readme": "ts-node scripts/add-docs.ts"
   },
+  "keywords": [
+    "utility",
+    "nifty",
+    "javascript",
+    "typescript",
+    "nifty-utils",
+    "utils"
+  ],
+  "license": "MIT",
   "author": "Hrishikesh Salunkhe",
-  "license": "ISC",
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^24.5.2",

@@ -1,4 +1,4 @@
-[**nifty-utils v1.0.0**](../README.md)
+[**nifty-utils**](../README.md)
 
 ***
 
