@@ -20,6 +20,7 @@ To provide a small but powerful library that grows with your project’s utility
 **Installation:**  
 ```bash
 npm install nifty-utils
+```
 
 # Documentation: 
 [See the documentation](./docs/globals.md)
