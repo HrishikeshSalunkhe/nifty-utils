@@ -70,7 +70,7 @@ jobs:
     steps:
       - uses: actions/checkout@e9e8e5e9b7d6e9e8e5e9e8e5e9e8e5e9e8e5e9e8  # checkout v4 SHA
       - name: Run Codacy Analysis
-        uses: codacy/codacy-analysis-cli-action@3f1e2d4a5b6c7d8e9f0abcdef1234567890abcdef  # Codacy CLI SHA
+        uses: codacy/codacy-analysis-cli-action@562ee3e  # Codacy CLI SHA
         with:
           api-token: ${{ secrets.CODACY_API_TOKEN }}
           tool: eslint
