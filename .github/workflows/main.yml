@@ -65,16 +65,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.4
-      - name: Debug SONAR_TOKEN presence
-        run: |
-          if [ -z "${{ secrets.SONAR_TOKEN }}" ]; then
-            echo "SONAR_TOKEN is not set"
-            exit 1
-          else
-            echo "SONAR_TOKEN is set"
-          fi
-
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2.2
         with:
           args: -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        env:
+          SONAR_HOST_URL: https://sonarcloud.io
