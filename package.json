@@ -18,6 +18,7 @@
     "dist"
   ],
   "scripts": {
+    "lint": "eslint .",
     "build": "tsup",
     "clean": "rm -rf dist",
     "test": "jest",
