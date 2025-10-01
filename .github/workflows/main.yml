@@ -51,6 +51,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.1.4
 
+      - name: Prepare output folder
+        run: mkdir -p results
+
       - name: Run Codacy Analysis
         uses: codacy/codacy-analysis-cli-action@master
         with:
