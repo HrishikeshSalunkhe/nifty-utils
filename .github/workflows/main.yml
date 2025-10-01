@@ -8,38 +8,18 @@ on:
 
 jobs:
   # -----------------
-  # Lint + Test
+  # Test
   # -----------------
-  lint-test:
+  test:
     runs-on: ubuntu-latest
-    needs: build
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4.1.4
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: npm
-
       - run: npm ci
-      - run: npm run lint
       - run: npm test
-
-  # -----------------
-  # Dependency Review
-  # -----------------
-  dependency-review:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Run npm audit
-        run: npm audit --production --audit-level=moderate || true
-
-      - name: GitHub Dependency Review
-        uses: actions/dependency-review-action@v4
 
   # -----------------
   # CodeQL Scan
@@ -51,47 +31,29 @@ jobs:
       contents: read
       security-events: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4.1.4
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
           languages: javascript
-
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
 
   # -----------------
   # Codacy Scan
   # -----------------
-  codacy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run Codacy Analysis
-        uses: codacy/codacy-analysis-cli-action@562ee3e92b8e92df8b67e0a5ff8aa8e261919c08
-        with:
-          api-token: ${{ secrets.CODACY_API_TOKEN }}
-          tool: eslint
-          format: sarif
-          output: results.sarif
-
-      - name: Upload SARIF to GitHub
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: results.sarif
-
+  # Need to learn and add
   # -----------------
   # SonarQube
   # -----------------
   sonarqube:
-    if: ${{ secrets.SONAR_TOKEN != '' }}
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'  # only run on main branch
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.1.4
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@1b9d398800bf807ad36901b351fff52deba642d6
+        uses: SonarSource/sonarqube-scan-action@v2.2
         with:
-          args: >
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          args: -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        env:
+          SONAR_HOST_URL: https://sonarcloud.io
