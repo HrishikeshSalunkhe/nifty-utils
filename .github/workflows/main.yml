@@ -13,8 +13,8 @@ jobs:
   lint-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744     # v4.1.4 SHA
-      - uses: actions/setup-node@9369e68b33a08e6bda68467b8642e5a8b6a2493d   # v5.0.0 SHA
+      - uses: actions/checkout@v4.1.4              # latest actions/checkout
+      - uses: actions/setup-node@v5                 # latest setup-node major tag
         with:
           node-version: 20
           cache: npm
@@ -31,11 +31,11 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
+      - uses: actions/checkout@v4.1.4
       - name: Run npm audit
         run: npm audit --production --audit-level=moderate || true
       - name: GitHub Dependency Review
-        uses: actions/dependency-review-action@c9733906b4af3ebdac38128c549682a8085e9086 # v4.2.5 SHA
+        uses: actions/dependency-review-action@v4
 
   # -----------------
   # CodeQL Scan
@@ -47,13 +47,13 @@ jobs:
       contents: read
       security-events: write
     steps:
-      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
+      - uses: actions/checkout@v4.1.4
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@5e7b7b89ecffb9a89bf2429fa8e95b646c8e3b6a    # v3.26.8 SHA
+        uses: github/codeql-action/init@v3
         with:
           languages: javascript
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@5e7b7b89ecffb9a89bf2429fa8e95b646c8e3b6a  # v3.26.8 SHA
+        uses: github/codeql-action/analyze@v3
 
   # -----------------
   # Codacy Scan
@@ -61,16 +61,16 @@ jobs:
   codacy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
+      - uses: actions/checkout@v4.1.4
       - name: Run Codacy Analysis
-        uses: codacy/codacy-analysis-cli-action@2425f71abea87f34a06e76e6a79171b61d14cfd8 # master SHA as of Oct 2025
+        uses: codacy/codacy-analysis-cli-action@master  # Only master or tag; adjust if new tags are available
         with:
           api-token: ${{ secrets.CODACY_API_TOKEN }}
           tool: eslint
           format: sarif
           output: results.sarif
       - name: Upload SARIF to GitHub
-        uses: github/codeql-action/upload-sarif@5e7b7b89ecffb9a89bf2429fa8e95b646c8e3b6a   # v3.26.8 SHA
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: results.sarif
 
@@ -80,8 +80,8 @@ jobs:
   sonarqube:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
+      - uses: actions/checkout@v4.1.4
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@26c5182dea89a1d0ace21e671b12b3b4662a69d3 # v4.2.0 SHA
+        uses: SonarSource/sonarqube-scan-action@v2.2
         with:
           args: -Dsonar.login=${{ secrets.SONAR_TOKEN }}
