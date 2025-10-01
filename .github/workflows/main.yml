@@ -92,6 +92,6 @@ jobs:
 
       - name: SonarQube Scan
         if: ${{ secrets.SONAR_TOKEN != '' }}
-        uses: SonarSource/sonarqube-scan-action@<SHA>
+        uses: SonarSource/sonarqube-scan-action@1b9d398800bf807ad36901b351fff52deba642d6
         with:
           args: -Dsonar.login=${{ secrets.SONAR_TOKEN }}
