@@ -63,6 +63,7 @@ jobs:
   # -----------------
   sonarqube:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'  # only run on main branch
     steps:
       - uses: actions/checkout@v4.1.4
       - name: SonarQube Scan
