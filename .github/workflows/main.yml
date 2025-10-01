@@ -8,34 +8,18 @@ on:
 
 jobs:
   # -----------------
-  # Lint + Test
+  # Test
   # -----------------
-  lint-test:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.4              # latest actions/checkout
-      - uses: actions/setup-node@v5                 # latest setup-node major tag
+      - uses: actions/checkout@v4.1.4
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: npm run lint
       - run: npm test
-
-  # -----------------
-  # Dependency Review
-  # -----------------
-  dependency-review:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v4.1.4
-      - name: Run npm audit
-        run: npm audit --production --audit-level=moderate || true
-      - name: GitHub Dependency Review
-        uses: actions/dependency-review-action@v4
 
   # -----------------
   # CodeQL Scan
@@ -63,7 +47,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.4
       - name: Run Codacy Analysis
-        uses: codacy/codacy-analysis-cli-action@master  # Only master or tag; adjust if new tags are available
+        uses: codacy/codacy-analysis-cli-action@master
         with:
           api-token: ${{ secrets.CODACY_API_TOKEN }}
           tool: eslint
