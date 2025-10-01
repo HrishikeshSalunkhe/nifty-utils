@@ -42,31 +42,7 @@ jobs:
   # -----------------
   # Codacy Scan
   # -----------------
-  codacy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      security-events: write
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4.1.4
-
-      - name: Prepare output folder
-        run: mkdir -p results
-
-      - name: Run Codacy Analysis
-        uses: codacy/codacy-analysis-cli-action@master
-        with:
-          api-token: ${{ secrets.CODACY_API_TOKEN }}
-          tool: eslint
-          format: sarif
-          output: ./results/results.sarif   # explicitly set output folder
-
-      - name: Upload SARIF to GitHub
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: ./results/results.sarif  # path matches the output
-
+  # Need to learn and add
   # -----------------
   # SonarQube
   # -----------------
