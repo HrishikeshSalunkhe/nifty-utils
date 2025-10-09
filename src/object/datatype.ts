@@ -16,7 +16,7 @@ export function IsObject(value: any): boolean {
  * @param value - the input value to check
  * @returns true if input value is a non-null object (includes arrays), otheriwse false
  */
-export function isNonNullObject(value: any): boolean {
+export function isNonNullObject(value: unknown): value is object {
   return value !== null && typeof value === DATA_TYPES.OBJECT;
 }
 
