@@ -27,4 +27,4 @@ npm install nifty-utils
 ```
 
 # Documentation: 
-[See the documentation](_media/globals.md)
+[See the documentation](./docs/globals.md)
