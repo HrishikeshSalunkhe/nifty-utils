@@ -1,10 +1,13 @@
+[**nifty-utils v1.0.1**](README.md)
 
 ***
 
-# nifty-utils
+# nifty-utils v1.0.1
 
-## Data Type Checks
+## Functions
 
+- [convertCase](functions/convertCase.md)
+- [convertToString](functions/convertToString.md)
 - [IsArray](functions/IsArray.md)
 - [IsBoolean](functions/IsBoolean.md)
 - [IsFunction](functions/IsFunction.md)
