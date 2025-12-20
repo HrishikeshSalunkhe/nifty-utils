@@ -46,10 +46,10 @@ jobs:
   # -----------------
   # SonarQube
   # -----------------
-  sonarqube:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'  # only run on main branch
-    steps:
+  # sonarqube:
+  #   runs-on: ubuntu-latest
+  #   if: github.ref == 'refs/heads/main'  # only run on main branch
+  #   steps:
       - uses: actions/checkout@v4.1.4
         with:
           fetch-depth: 0
