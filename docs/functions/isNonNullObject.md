@@ -1,4 +1,4 @@
-[**nifty-utils**](../README.md)
+[**nifty-utils v1.0.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Function: isNonNullObject()
 
-> **isNonNullObject**(`value`): `boolean`
+> **isNonNullObject**(`value`): `value is object`
 
 Defined in: object/datatype.ts:19
 
@@ -16,12 +16,12 @@ Checks if value is a non-null object (includes arrays)
 
 ### value
 
-`any`
+`unknown`
 
 the input value to check
 
 ## Returns
 
-`boolean`
+`value is object`
 
 true if input value is a non-null object (includes arrays), otheriwse false

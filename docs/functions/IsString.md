@@ -1,4 +1,4 @@
-[**nifty-utils**](../README.md)
+[**nifty-utils v1.0.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Function: IsString()
 
-> **IsString**(`value`): `boolean`
+> **IsString**(`value`): `value is string`
 
 Defined in: string/datatype.ts:9
 
@@ -16,12 +16,12 @@ Checks if value is string
 
 ### value
 
-`any`
+`unknown`
 
 the input value to check
 
 ## Returns
 
-`boolean`
+`value is string`
 
 true if input value is string, otheriwse false
